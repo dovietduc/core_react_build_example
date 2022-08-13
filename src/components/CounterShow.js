@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import {Store} from '../Store/Store';
 
-function CounterShow(props) {
-    const {counter} = props;
+
+function CounterShow() {
     return (
-        <h2>Counter {counter}</h2>
+        <h2>Counter {Store.state.counter}</h2>
     )
 }
 

@@ -1,18 +1,21 @@
-import React from 'react'
+import React from 'react';
+import {Store} from '../Store/Store';
 
-function Button(props) {
+function Button({callbackForceRender}) {
 
-    const {onHandleIncrement} = props;
+    const handleIncrement = () => {
+        Store.increment();
 
-    const handleIncrementFromChild = () => {
-        onHandleIncrement();
+        // force app re-render
+        callbackForceRender();
     }
 
     return (
-        <button onClick={handleIncrementFromChild}>
+        <button onClick={handleIncrement}>
             Increment
         </button>
     )
+    
 }
 
 export default Button

@@ -1,16 +1,15 @@
 import React from 'react';
 import Button from './Button';
 import CounterShow from './CounterShow';
+import ButtonDecrement from './ButtonDecrement';
 
-function Counter(props) {
-
-    const {counter, onHandleIncrement} = props;
-
+function Counter({callbackForceRender}) {
     return (
         <div>
-            <CounterShow counter={counter}/>
+            <CounterShow/>
             <div>
-                <Button onHandleIncrement={onHandleIncrement}/>
+                <Button callbackForceRender={callbackForceRender}/>
+                <ButtonDecrement callbackForceRender={callbackForceRender}/>
             </div>
         </div>
     );
