@@ -3,13 +3,13 @@ import Button from './Button';
 import CounterShow from './CounterShow';
 import ButtonDecrement from './ButtonDecrement';
 
-function Counter({callbackForceRender}) {
+function Counter() {
     return (
         <div>
             <CounterShow/>
             <div>
-                <Button callbackForceRender={callbackForceRender}/>
-                <ButtonDecrement callbackForceRender={callbackForceRender}/>
+                <Button/>
+                <ButtonDecrement/>
             </div>
         </div>
     );

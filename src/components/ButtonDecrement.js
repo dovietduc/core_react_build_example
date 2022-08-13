@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Store} from '../Store/Store';
+import {ForceRenderContext} from '../App';
 
-function ButtonDecrement({callbackForceRender}) {
+function ButtonDecrement() {
+
+    const forceRenderStore = useContext(ForceRenderContext);
 
     const handleDecrement = () => {
         // thay đổi state trên store
         Store.decrement();
-        // force app render
-        callbackForceRender();
+
+        // force app re-render
+        forceRenderStore.callbackForceRender();
+      
     }
 
     return (

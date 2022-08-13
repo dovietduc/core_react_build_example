@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Store} from '../Store/Store';
+import {ForceRenderContext} from '../App';
 
-function Button({callbackForceRender}) {
+function Button() {
+
+    const forceRenderStore = useContext(ForceRenderContext);
+
+    console.log('forceRenderStore', forceRenderStore);
+
+
 
     const handleIncrement = () => {
         Store.increment();
 
         // force app re-render
-        callbackForceRender();
+        forceRenderStore.callbackForceRender();
+
     }
 
     return (
